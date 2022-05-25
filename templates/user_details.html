@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Profile Details</title>
+    <style>
+        th,td{
+        border: 1px black solid;
+        }
+    </style>
+</head>
+<body class="content">
+  <h2>User Details</h2>
+{% if user.is_superuser%}
+  <br>
+  <table align="centre">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email ID</th>
+      </tr>
+      {% for data in userr %}
+      <tr>
+        <td>{{data.id}}</td>
+        <td>{{data.username}}</td>
+        <td>{{data.first_name}}</td>
+        <td>{{data.last_name}}</td>
+        <td>{{data.email}}</td>
+      </tr>
+      {% endfor%}
+  </table>
+{% endif %}
+</body>
+{% endblock %}

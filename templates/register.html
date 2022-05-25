@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+<body class="content">
+<!-- <form action="register" method="POST">
+{% csrf_token %}
+
+        <label for="firstname">First Name:</label>
+        <input type="text" name="firstname" class="form-control" placeholder="Enter First Name" required="required">
+        <br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" name="lastname" class="form-control" placeholder="Enter Last Name" required="required">
+        <br><br>
+
+        <label for="emailid">Email ID:</label>
+        <input type="email" name="emailid" class="form-control" placeholder="Enter Mail ID" required="required">
+        <br><br>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" class="form-control" required="required">
+        <br><br>
+           
+        <label for="password1">Password:</label>
+        <input type="password" name="password1" class="form-control" required="required">
+        <br><br>
+
+        <label for="password2">Confirm Password:</label>
+        <input type="password" name="password2" class="form-control" required="required">
+        <br><br>
+
+        <button type="submit">Submit</button>
+</form> -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-offset-3 col-xs-6 width-100">
+<form action="register" method="post">
+    {% csrf_token %}
+    <div >
+        <input class="form-control placeholder-fix" type="text" placeholder="First Name" name="firstname" required=""><br>
+        <input class="form-control placeholder-fix" type="text" placeholder="Last Name" name="lastname" required=""><br>
+        <input class="form-control placeholder-fix" type="email" placeholder="Email ID" name="emailid" required=""><br>
+        <input class="form-control placeholder-fix" type="text" placeholder="Username" name="username" required=""><br>
+        <input class="form-control placeholder-fix" type="password" placeholder="Password" name="password1" required=""><br>
+        <input class="form-control placeholder-fix" type="password" placeholder="Confirm Password" name="password2" required="">
+    </div>
+    <div class="action-button">
+        <button class="btn-block" type="submit">Register</button> 
+    </div>
+</form>
+</div>
+</div>
+</div>
+<div>
+    <!-- {% for message in messages %}
+    <h3>
+        {{message}}
+    </h3>
+    {% endfor %} -->
+    <center><label class="text-danger">{{ msg }}</label></center>
+</div>
+
+</body>
+{% endblock %}

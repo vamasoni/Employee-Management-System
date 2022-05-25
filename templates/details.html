@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Profile Details</title>
+</head>
+<body class="content">
+    <h2>Profile Details</h2>
+<br>
+<form action="update" method="POST">
+    {%csrf_token%}
+    <label for="newfirstname">First Name:</label>
+    <input type="text" name="newfirstname" value={{user.first_name}}> <br><br>
+    <label for="newlastname">Last Name: </label> 
+    <input type="text" name="newlastname" value={{user.last_name}}><br><br>
+    <label for="newemail">Email ID: </label> 
+    <input type="email" name="newemail" value={{user.email}}><br><br>
+    <label for="newusername">Username: </label>
+    <input type="text" name="newusername" value={{user.username}}><br><br>
+    <button type="submit">Update</button>
+    <input type="hidden" value={{user.id}} name="id">
+    <!-- <label for="password1">Password: {{user.password}}</label><br><br> -->
+    
+</form>
+<div>
+    <center><label class="text-danger">{{ msg }}</label></center>
+</div>
+
+<div class="row">
+    <ul class="page-links">
+        <li><a href="change_password">Change Password</a><li>
+    </ul>
+</div>
+
+
+</body>
+{% endblock %}
